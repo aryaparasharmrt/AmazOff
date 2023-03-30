@@ -1,13 +1,10 @@
 package com.AmazOff.amazoff.RequestDTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter @Setter
+@Data
 public class SellerRequestDTO {
 
     private String name;
