@@ -2,6 +2,7 @@ package com.AmazOff.amazoff.Models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "customer")
 public class Customer {
@@ -28,8 +30,8 @@ public class Customer {
     @Column(unique = true)
     private String mobNo;
 
-    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
-    Card card;
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    List<Card> cardList = new ArrayList<>();
 
     @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
     Cart cart;
