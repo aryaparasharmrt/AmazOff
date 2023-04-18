@@ -15,8 +15,8 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-//    @PostMapping("/add_customer")
-//    public String addCustomer(@RequestBody CustomerRequestDTO customerRequestDTO){
-//        return customerService.addCustomer(customerRequestDTO);
-//    }
+    @PostMapping("/add_customer")
+    public String addCustomer(@RequestBody CustomerRequestDTO customerRequestDTO){
+        return customerService.addCustomer(customerRequestDTO);
+    }
 }
