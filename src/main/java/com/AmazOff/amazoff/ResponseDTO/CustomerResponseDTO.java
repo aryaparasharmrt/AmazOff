@@ -4,13 +4,12 @@ import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
+@Getter @Setter
 @Builder
-public class SellerResponseDTO {
+public class CustomerResponseDTO {
 
     private String name;
-    private int mobNo;
+    private int age;
     private String email;
-    private String panCard;
+    private String mobNo;
 }

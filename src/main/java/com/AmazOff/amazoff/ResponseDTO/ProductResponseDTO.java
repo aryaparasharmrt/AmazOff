@@ -12,10 +12,7 @@ import lombok.*;
 public class ProductResponseDTO {
 
     private String name;
-
     private int quantity;
-
     private Category category;
-
     private ProductStatus productStatus;
 }

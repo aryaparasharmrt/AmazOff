@@ -23,11 +23,6 @@ public class SellerController {
         return sellerService.addSeller(sellerRequestDTO);
     }
 
-    //get all sellers
-//    @GetMapping("get_all_seller")
-//    public List<SellerResponseDTO>
-
-    //get seller by panCard
     @GetMapping("/get_sellerByPanCard")
     public SellerResponseDTO getSellerByPanCard(@RequestParam("panCard") String panCard){
         return sellerService.getSellerByPanCard(panCard);

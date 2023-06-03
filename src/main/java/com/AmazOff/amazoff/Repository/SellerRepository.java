@@ -10,5 +10,4 @@ import java.util.List;
 public interface SellerRepository extends JpaRepository<Seller, Integer>{
 
      Seller findByPanCard(String panCard);
-
 }

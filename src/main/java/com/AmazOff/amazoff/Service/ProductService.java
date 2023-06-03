@@ -28,9 +28,9 @@ public class ProductService {
 
         Seller seller;
 
-        try{
-            seller =  sellerRepository.findById(productRequestDTO.getSellerId()).get();
-        } catch (Exception e){
+        try {
+            seller = sellerRepository.findById(productRequestDTO.getSellerId()).get();
+        } catch (Exception e) {
             throw new SellerNotFoundException("Invalid Seller Id");
         }
 
@@ -45,13 +45,13 @@ public class ProductService {
         return productResponseDTO;
     }
 
-    public List<ProductResponseDTO> getProductByCategory(Category category){
+    public List<ProductResponseDTO> getProductByCategory(Category category) {
 
         List<Product> productList = productRepository.findByCategory(category);
 
         List<ProductResponseDTO> productResponseDTOS = new ArrayList<>();
 
-        for(Product product : productList){
+        for (Product product : productList) {
             ProductResponseDTO productResponseDTO = ProductConverter.producttoProductResponseDTO(product);
             productResponseDTOS.add(productResponseDTO);
         }

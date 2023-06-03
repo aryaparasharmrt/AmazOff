@@ -17,27 +17,29 @@ public class SellerService {
 
     @Autowired
     SellerRepository sellerRepository;
-    public String addSeller(SellerRequestDTO sellerRequestDTO){
+
+    public String addSeller(SellerRequestDTO sellerRequestDTO) {
 
         Seller seller = SellerConvertor.SellerRequestDTOtoSeller(sellerRequestDTO);
         sellerRepository.save(seller);
         return "Seller Successfully added";
     }
 
-    public SellerResponseDTO getSellerByPanCard(String panCard){
+    public SellerResponseDTO getSellerByPanCard(String panCard) {
 
         Seller sellerObjectByPanCard = sellerRepository.findByPanCard(panCard);
 
         SellerResponseDTO sellerResponseDTO = SellerConvertor.SellertoSellerResponseDTO(sellerObjectByPanCard);
+
         return sellerResponseDTO;
     }
 
-    public List<SellerResponseDTO> getAllSeller(){
+    public List<SellerResponseDTO> getAllSeller() {
 
         List<Seller> sellerList = sellerRepository.findAll();
         List<SellerResponseDTO> sellerResponseDTOS = new ArrayList<>();
 
-        for(Seller seller : sellerList){
+        for (Seller seller : sellerList) {
 
             SellerResponseDTO sellerResponseDTO = SellerConvertor.SellertoSellerResponseDTO(seller);
             sellerResponseDTOS.add(sellerResponseDTO);
@@ -46,11 +48,12 @@ public class SellerService {
         return sellerResponseDTOS;
     }
 
-    public String updateSellerName(UpdateSellerNameDTO updateSellerNameDTO){
+    public String updateSellerName(UpdateSellerNameDTO updateSellerNameDTO) {
 
         Seller seller = sellerRepository.findById(updateSellerNameDTO.getId()).get();
         seller.setName(updateSellerNameDTO.getName());
         sellerRepository.save(seller);
+
         return "Seller has been Updated Successfully";
     }
 }

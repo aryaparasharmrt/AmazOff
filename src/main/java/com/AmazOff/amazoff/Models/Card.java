@@ -3,6 +3,7 @@ package com.AmazOff.amazoff.Models;
 import com.AmazOff.amazoff.Enum.CardType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name = "card")
 public class Card {
 
@@ -28,4 +30,5 @@ public class Card {
     @ManyToOne
     @JoinColumn
     Customer customer;
-}
+
+ }
