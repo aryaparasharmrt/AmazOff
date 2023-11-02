@@ -18,7 +18,4 @@ public class CardController {
     public String addCard(@RequestBody CardRequestDTO cardRequestDTO){
         return cardService.addCard(cardRequestDTO);
     }
-
-//    @GetMapping("/get_card")
-//    public Card gerCard();
 }
