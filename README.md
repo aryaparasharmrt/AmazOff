@@ -1,3 +1,4 @@
+
 # Amazoff
 
 Brief description or introduction to your Spring Boot project.
@@ -51,4 +52,4 @@ Use Endpoints or configured `Rest-Apis` to perform web retaled tasks .For testin
 - `GET /api/endpoint` - `https://localhost:8080/Customer/getCustomer/1`
 - `POST /api/endpoint` - `https://localhost:8080/Customer/addCustomer`
 
-i
+
